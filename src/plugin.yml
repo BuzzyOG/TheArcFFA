@@ -1,0 +1,15 @@
+name: ArcFFA
+version: 1.0
+description: Free-For-All game. TheArc reserved.
+author: Zyraun
+main: net.thearc.ffa.Main
+
+commands:
+  spawn:
+    description: Manage spawns on the server.
+  pvplog:
+    description: View recent server infractions.
+    aliases: [pvplogs, pvpview, infraction, infractions, inf]
+  ban:
+    description: Banish a player from the server.
+    aliases: [banish]
