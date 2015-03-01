@@ -5,6 +5,7 @@ import net.thearc.ffa.game.items.GameInventory;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 
 public class BattleHandler implements Listener {
@@ -25,6 +26,12 @@ public class BattleHandler implements Listener {
 
         e.setDeathMessage("§c[DEATH] §7" + e.getEntity().getKiller().getName() + " §6has slain §7" + e.getEntity().getName());
         e.getEntity().sendMessage("§c[INFO] §7Your killer had §e10.0 hearts");
+    }
+    
+    @EventHandler
+    public void onItemDrop(PlayerDropItemEvent e) {
+    	e.setCancelled(true);
+    	e.getPlayer().sendMessage("§c[DROP] §7You cannot drop items");
     }
 
 }
